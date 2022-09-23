@@ -1,0 +1,279 @@
+/*reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*grid template*/
+
+/* inicio estilos index*/
+
+/*propiedades del padre*/
+
+.contenedor {
+    height: 100vh;
+    display: grid;
+
+    background-image: url("../img/FondoOp2_1.jpg");
+    background-size: cover;
+    background-position: center top;
+    /*grid template areas */
+
+    grid-template-areas:
+        "header"
+        "cosita"
+        "section-dos"
+        "footer";
+
+
+}
+
+
+header {
+    grid-area: header;
+}
+
+header img {
+    height: 95%;
+}
+
+.nav-header {
+    display: flex;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+
+.cosita {
+    grid-area: cosita;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+section img {
+    height: 40px;
+    animation-name: animacion;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animacion {
+    0% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+
+}
+
+
+.section-dos {
+    grid-area: section-dos;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.section-dos ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
+
+.section-dos ul li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+    margin: 0 20px;
+}
+
+.section-dos ul li a img {
+    height: 50px;
+    margin: 5px;
+}
+
+.section-dos ul li:hover {
+    transform: scale(0.9);
+    filter: drop-shadow(1px 1px);
+}
+
+footer {
+    padding-top: 20px;
+    margin: 10px;
+    grid-area: footer;
+    color: rgba(255, 255, 255);
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* fin estilos index*/
+
+/* inicio estilos the_series*/
+
+
+.series {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+
+    background-image: url("../img/fondo2negro.jpg");
+    background-size: cover;
+
+    grid-template-columns: 1fr;
+    /*grid template areas */
+
+    grid-template-areas:
+        "header"
+        "people"
+        "parrafo1"
+        "footer";
+
+    gap: 5px;
+
+}
+
+
+.section-dosS {
+    grid-area: section-dosS;
+    margin: 40px;
+}
+
+
+.show {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.show .navbar-nav li{
+    
+    background-color: rgba(204, 204, 204, 0.192);
+}
+
+.imgSeries{
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    margin-left: 250px;
+
+}
+
+/* inicio estilos stranger people*/
+
+.parrafo1 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    color: #CCC;
+}
+
+.people {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.people .carousel {
+    max-width: 800px;
+}
+
+
+
+
+
+
+
+/*media queries home*/
+
+@media screen and (min-width: 576px) {
+
+    .contenedor {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 2fr 0.3fr;
+
+        grid-template-areas:
+            "header header"
+            "cosita section-dos"
+            "footer footer";
+        gap: 5px;
+    }
+
+    .section-dos {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .section-dos ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .section-dos ul li a img {
+        height: 30px;
+    }
+
+
+    .cosita {
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+
+    
+
+    /*Stranger people*/
+    .parrafo1 {
+        padding: 0 10%;
+        color: #CCC;
+    }
+}
+
+/*estiloa contacto*/
+
+.commentsForm{
+    color: #CCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.formulario{
+    color: #CCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
